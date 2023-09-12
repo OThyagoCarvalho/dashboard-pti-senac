@@ -1,0 +1,66 @@
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: #f2e7d1;
+  color: #1e2336;
+}
+
+.container h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 3rem;
+}
+
+.container label {
+  font-weight: bold;
+}
+
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0.4;
+}
+
+.rightSide {
+  flex: 0.6;
+  background-image: url("../../assets/aaa.png");
+}
+
+.form {
+  border-radius: 10px;
+  width: fit-content;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.inputDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.form input {
+  padding: 5px;
+  border: black solid 2px;
+  border-radius: 5px;
+  height: 3rem;
+  width: 25rem;
+}
+
+.form button {
+  background-color: #1e2336;
+
+  width: fit-content;
+  padding: 10px 37px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background-color: #11141f;
+}
