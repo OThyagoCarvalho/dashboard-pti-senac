@@ -5,9 +5,6 @@ import { redirect } from "next/navigation";
 import { useState } from "react";
 import { useSessionContext } from "@/app/context/SessionProvider";
 import classes from "./AuthForm.module.css";
-import Image from "next/image";
-
-import image from "../../assets/aaa.png";
 
 const AuthForm = () => {
   const { hasSession, setSession } = useSessionContext();
