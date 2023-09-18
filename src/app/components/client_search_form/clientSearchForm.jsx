@@ -1,8 +1,10 @@
+import BookingForm from "../booking_form/BookingForm";
+import SimpleDialog from "../simple_dialog/SimpleDialog";
 import classes from "./clientSearchForm.module.css";
 
 const ClientSearchForm = () => {
   return (
-    <form className={classes.searchDiv}>
+    <section className={classes.searchDiv}>
       <div>
         <fieldset>
           <label htmlFor="client">Cliente</label>
@@ -19,11 +21,9 @@ const ClientSearchForm = () => {
       </div>
       <div className={classes.buttonDiv}>
         <button className={classes.searchButton}>Pesquisar</button>
-        <button type="button" className={classes.scheduleButton}>
-          Agendar novo
-        </button>
+        <SimpleDialog buttonLabel={'Agendar Novo'} buttonType={'button'} dialogTitle={'Agendar Novo Cliente'} dialogContent={<BookingForm/>}/>
       </div>
-    </form>
+    </section>
   );
 };
 
