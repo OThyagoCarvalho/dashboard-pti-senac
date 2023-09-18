@@ -5,21 +5,21 @@ import styles from './BookingForm.module.css';
 
 function BookingForm() {
 
-    if(typeof window === 'undefined') return null;
-
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    date: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
+    
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        date: '',
     });
-  };
+    
+    if(typeof window === 'undefined') return null;
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+        ...formData,
+        [name]: value,
+        });
+    };
 
 
   const handleSubmit = (e) => {
