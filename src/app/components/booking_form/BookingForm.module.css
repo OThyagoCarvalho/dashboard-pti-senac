@@ -1,0 +1,50 @@
+.searchDiv {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: #d9d9d9;
+    border-radius: 20px;
+    gap: 1rem;
+    color: #1e2336;
+    max-width: 1280px;
+    margin-inline: auto;
+    margin: 1rem 0;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .form div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .form div label {
+    font-size: 1rem;
+  }
+
+  .form div input {
+    margin: 0;
+  }
+  
+  .buttonDiv {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .buttonDiv button {
+    background-color: #1e2336;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+  }
+
+  .buttonDiv button:disabled {
+    background-color: #7c808c;
+    color: #d9d9d9;
+  }
