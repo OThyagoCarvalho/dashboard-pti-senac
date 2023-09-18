@@ -1,15 +1,9 @@
 'use client'
-
-import { useEffect } from "react"
+import { useAppointments } from "@/app/context/AppointmentsContext"
 
 export default function AppointmentTable() {
-
-    let appointments = localStorage.getItem('appointments') ? JSON.parse(localStorage.getItem('appointments')) : []
-
-    useEffect(() => {
-        console.log('useEffect')
-       appointments =  localStorage.getItem('appointments') ? JSON.parse(localStorage.getItem('appointments')) : []
-    },  [localStorage.getItem('appointments')])
+    
+    const { appointments } = useAppointments();
 
     return (
         <div className="bg-white rounded-md p-4">

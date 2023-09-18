@@ -1,26 +1,34 @@
-"use client";
+'use client'
 
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
 const SessionContext = createContext();
 
 export const useSessionContext = () => useContext(SessionContext);
 
 export const SessionProvider = ({ children }) => {
-  
-  const [hasSession, setHasSession] = useState(localStorage.getItem('HASSESSION') === 'TRUE');
+  const [hasSession, setHasSession] = useState(false);
 
-  if (typeof window === 'undefined') return null;
-  
+  useEffect(() => {
+    // Check if localStorage is available (only on the client-side)
+    if (typeof window !== 'undefined') {
+      const storedHasSession = localStorage.getItem('HASSESSION');
+      setHasSession(storedHasSession === 'TRUE');
+    }
+  }, []);
 
   const setSession = () => {
-    localStorage.setItem('HASSESSION', 'TRUE');
-    setHasSession(true);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('HASSESSION', 'TRUE');
+      setHasSession(true);
+    }
   };
 
   const clearSession = () => {
-    localStorage.setItem('HASSESSION', 'FALSE');
-    setHasSession(false);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('HASSESSION', 'FALSE');
+      setHasSession(false);
+    }
   };
 
   const value = {

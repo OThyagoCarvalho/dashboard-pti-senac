@@ -2,9 +2,11 @@
 
 import React, { useState } from 'react';
 import styles from './BookingForm.module.css';
+import { useAppointments } from '@/app/context/AppointmentsContext';
 
 function BookingForm() {
 
+    const { addAppointment } = useAppointments();
     
     const [formData, setFormData] = useState({
         name: '',
@@ -23,13 +25,8 @@ function BookingForm() {
 
 
   const handleSubmit = (e) => {
-    e.preventDefault();
 
-    const existingAppointments = JSON.parse(localStorage.getItem('appointments')) || [];
-
-    existingAppointments.push(formData);
-
-    localStorage.setItem('appointments', JSON.stringify(existingAppointments));
+    addAppointment(formData);
 
     setFormData({
       name: '',
@@ -38,8 +35,6 @@ function BookingForm() {
     });
 
     console.log('Appointment saved:', formData);
-
-    window.location.reload();
 
   };
   return (

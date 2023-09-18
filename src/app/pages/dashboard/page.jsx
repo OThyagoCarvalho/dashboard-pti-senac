@@ -11,6 +11,7 @@ const Dashboard = () => {
   if (!hasSession) {
     redirect("/");
   }
+    
   return (
     <div className="p-4">
       <ClientSearchForm />
